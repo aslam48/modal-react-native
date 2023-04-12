@@ -1,54 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
-
-import { View, Text, SafeAreaView,Pressable, Button, StyleSheet, Modal} from 'react-native'
-import React from 'react'
-import { useState } from 'react'
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Pressable,
+  Button,
+  StyleSheet,
+  Modal,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { styles } from "./style";
+import { useState } from "react";
 
 export default function App() {
-    const [visible, setVisibility] = useState(false);
-    const show = () => setVisibility(true)
-    const hide = () => setVisibility(false)
-  return ( 
-      <SafeAreaView style={styles.fill}>
-        <Button title='Show' onPress={show}/>
-            <Modal
-            visible={visible}
-            onRequestClose={hide}
-            animationType="fade"
-            transparent
-            >
-                <Pressable style={styles.upper} onPress={hide} /> 
-                <View style={styles.lower}>
-                    <Button title="Hide" onPress={hide}/>
-                </View> 
-        </Modal>
-      </SafeAreaView>
-  )
+  const [visible, setVisibility] = useState(false);
+  const show = () => setVisibility(true);
+  const hide = () => setVisibility(false);
+  return (
+    <SafeAreaView style={styles.fill}>
+      <Button title="Show" onPress={show} />
+      <Modal
+        visible={visible}
+        onRequestClose={hide}
+        animationType="fade"
+        transparent
+      >
+        <Pressable style={styles.upper} onPress={hide} />
+        <View style={styles.lower}>
+
+     
+        <View style={styles.arror}>              
+            <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={hide}/>
+         </View> 
+
+           <View style={styles.componentTitle}>
+              <Text style={styles.swapText}>Continue Swap</Text>
+            </View>
+
+
+
+              {/* create swup details  */}
+           <View style={styles.centerItem}>
+
+            <View style={styles.containerColume}>
+            <View style={styles.titleSwap}>
+                <Text style={styles.swupText}>Create Swap Order</Text>
+            </View>
+
+            <View>
+              <Text>Enter the quantity you want</Text>
+              <Text style={styles.center}>below</Text>
+            </View>
+
+            </View>
+           
+           </View>
+            
+
+
+           
+          
+        </View>
+      </Modal>
+    </SafeAreaView>
+  );
 }
-
-
-const styles = StyleSheet.create({
-    fill: {flex: 1},
-    upper: {height: 100, backgroundColor: '#DDD', opacity: .5},
-    lower: {flex: 1, backgroundColor: "white", }
-})
