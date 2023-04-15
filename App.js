@@ -11,11 +11,9 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Dimensions,
-  
 } from "react-native";
 
 const {width, height} = Dimensions.get("window")
-
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import { styles } from "./style";
@@ -55,7 +53,6 @@ export default function App() {
 //       }
 //     })
 // }, [])
-  
   
 // function renderAreaCurrencyModal(){
 //   return(
@@ -103,10 +100,10 @@ export default function App() {
               </View>
 
                 {/* input  */}
-                <View style={{flexDirection: "row", justifyContent:"center",}}>
+                <View style={{flexDirection: "row", justifyContent:"center"}}>
+
                   {/* amount text input */}
                   <TextInput keyboardType="numeric" placeholder="Enter your amount" placeholderTextColor='gray' selectionColor='gray' style={{width: 200, marginVertical: 10, borderBottomColor:" #111", borderBottomWidth: 1, height: 40, fontSize: 20, color: "#111"}}  />
-
 
                   <TouchableOpacity style={{width:80, height: 50, marginHorizontal:5, borderBottomColor: "#111", borderBottomWidth: 1, flexDirection: "row", fontSize:12}}>
                     
@@ -128,7 +125,7 @@ export default function App() {
                    </View>
    
                    <View style={{justifyContent: "center", marginLeft: 5}}>
-                     <Text style={{ color: "#111", fontSize:14}}>usd</Text>
+                     <Text style={{ color: "#lll", fontSize:14}}>usd</Text>
                    </View>
                      </TouchableOpacity>
 
